@@ -17,17 +17,12 @@
   <br/>
   <h2>JQuery UI DatePicker integrated with Angular</h2>
   <div ng-controller="PickerCtrl">
-    <h4>Show/hide control based on scope property being set within controller function that is invoked on button click</h4>
-    <button ng-click="buttonClicked()">Show Date</button> Selected date: {{selectedDate}}
-    <jqui-datepicker show="showDatePicker" model="selectedDate" selected="dateSelected()" style="font-size:11px;"></jqui-datepicker>
-
-     <br/><br/>
-    <h4>Control always displayed. DatePicker options being updated on the fly.</h4>
-     <jqui-datepicker model="selectedDate2" selected="date2Selected()" options="picker2options" style="font-size:9pt;"></jqui-datepicker>
-     Selected date: {{selectedDate2}}
+    <h4>Button click invoked a controller method that toggles the value of a scope property, which shows/hides the control</h4>
+    <button ng-click="buttonClicked()">Show Date</button>
+    <jqui-datepicker show="showDatePicker"></jqui-datepicker>
   </div>
-
-
+  <br/>
+  <hr/>
 
   <link   type="text/css"        href="lib/jquery/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
   <script type="text/javascript" src="lib/jquery/js/jquery-1.7.2.min.js"></script>
