@@ -2,3 +2,7 @@ body {
   font-family: verdana, helvetica, arial;
   font-size:11pt;
 }
+
+.datepicker { font-size:11px; position: absolute; }
+
+
