@@ -19,7 +19,8 @@
   <div ng-controller="PickerCtrl">
     <h4>Button click invoked a controller method that toggles the value of a scope property, which shows/hides the control</h4>
     <button ng-click="buttonClicked()">Show Date</button>
-    <jqui-datepicker show="showDatePicker"></jqui-datepicker>
+    Selected date: {{selectedDate}}
+    <jqui-datepicker show="showDatePicker" model="selectedDate"></jqui-datepicker>
   </div>
   <br/>
   <hr/>
