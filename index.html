@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>DatePicker - Angular sample</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  Objective:
+  <ul>
+    <li>Clik on button invokes a controller method, which triggers the display of a datepicker control positioned next to the button
+    <li>Select a date in DP invokes a method on controller
+  </ul>
+  <br/>
+  <br/>
+
+
+  <h2>JQuery UI DatePicker handled with typical JavaScript code</h2>
+  <div>
+    <p>Date: <input type="text" id="datepicker"></p>
+    <p>Selected date: <span id="selDate">n/a</span>
+  </div>
+
+  <br/>
+  <h2>JQuery UI DatePicker integrated with Angular</h2>
+  <div ng-controller="PickerCtrl">
+    <h4>Show/hide control based on scope property being set within controller function that is invoked on button click</h4>
+    <button ng-click="buttonClicked()">Show Date</button> Selected date: {{selectedDate}}
+    <jqui-datepicker show="showDatePicker" model="selectedDate" selected="dateSelected()" style="font-size:11px;"></jqui-datepicker>
+
+     <br/><br/>
+    <h4>Control always displayed. DatePicker options being updated on the fly.</h4>
+     <jqui-datepicker model="selectedDate2" selected="date2Selected()" options="picker2options" style="font-size:9pt;"></jqui-datepicker>
+     Selected date: {{selectedDate2}}
+  </div>
+
+
+
+  <link   type="text/css"        href="lib/jquery/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet" />
+  <script type="text/javascript" src="lib/jquery/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="lib/jquery/js/jquery-ui-1.8.21.custom.min.js"></script>
+
+  <script src="lib/angular/angular-1.0.1.js"></script>
+  <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        $('#datepicker').datepicker({
+          onSelect: function(txt) {
+            $('#selDate').text(txt);
+          }
+        });
+      });
+    </script>
+
+</body>
+</html>
