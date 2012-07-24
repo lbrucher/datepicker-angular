@@ -13,7 +13,6 @@ appModule.controller('PickerCtrl', ['$scope', '$log', function($scope, $log) {
 	};
 
 	$scope.buttonClicked = function() {
-//		$scope.showDatePicker = true;
 		$scope.showDatePicker = !$scope.showDatePicker;
 	};
 
@@ -58,7 +57,7 @@ appModule.directive('jquiDatepicker', function($log) {
 				var opts = baseOptions || {};
 				opts.onSelect = function(dateText, inst) { 
 					if (model)
-						scope[model] = dateText;
+						scope.$apply(attrs.model+"='"+ dateText+"'");
 					if (fnSelected)
 						scope.$apply(fnSelected);
 				};
